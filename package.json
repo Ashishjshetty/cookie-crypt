@@ -8,8 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com"
+    "url": "https://github.com/Ashishjshetty/cookie-crypt.git"
   },
+  "bugs": {
+    "url": "https://github.com/Ashishjshetty/cookie-crypt/issues"
+  },
+  "homepage": "https://github.com/Ashishjshetty/is-connected#readme",
   "keywords": [
     "cookie",
     "encrypt.middleware",

@@ -1,0 +1,20 @@
+{
+  "name": "cookie-crypt",
+  "version": "0.0.1",
+  "description": "middleware to encrypt cookies ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com"
+  },
+  "keywords": [
+    "cookie",
+    "encrypt.middleware",
+    "express"
+  ],
+  "author": "Ashish Shetty",
+  "license": "ISC"
+}

@@ -39,23 +39,21 @@ function decryptThis(data, secret) {
  */
 function cookieCrypt(secret, options) {
   return function cookieCrypt(req, res, next) {
-    if (res.cookie !== Function || !res.cookies !== Object) {
+    if (typeof res.cookie !== 'function' || typeof req.cookies !== 'object') {
       return next();
     }
     var mainCookie = res.cookie;
     res.cookie = function (name, value, options) {
-      console.log('cookie called', name, value);
-      if (name === 'userData') {
-        value = encryptThis(JSON.stringify(value), secret);
-      }
+      // console.log('cookie called', name, value);
+      
+      value = encryptThis(JSON.stringify(value), secret);
+    
       mainCookie.call(this, name, value, options);
     };
     var cookies = Object.keys(req.cookies);
     cookies.forEach(function (userData) {
-      console.log('data', (cookies[userData]) ? JSON.stringify(cookies[userData]) : ' not found');
-      var decUserData = JSON.parse((cookies[userData]) ? decryptThis(cookies[userData], secret) : cookies[userData]);
+      var decUserData = JSON.parse((req.cookies[userData]) ? decryptThis(req.cookies[userData], secret) : req.cookies[userData]);
       req.cookies[userData] = decUserData;
-      console.log('decrypted', typeof decUserData);
     });
     next();
   };

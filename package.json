@@ -1,7 +1,7 @@
 {
   "name": "cookie-crypt",
-  "version": "0.0.1",
-  "description": "middleware to encrypt cookies ",
+  "version": "0.0.2",
+  "description": "middleware to encrypt all cookies ",
   "main": "index.js",
   "scripts": {
     "test": "npm test"
@@ -16,9 +16,14 @@
   "homepage": "https://github.com/Ashishjshetty/is-connected#readme",
   "keywords": [
     "cookie",
-    "encrypt.middleware",
+    "encrypt",
+    "middleware",
     "express"
   ],
   "author": "Ashish Shetty",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "should": "^11.1.1",
+    "sinon": "^1.17.6"
+  }
 }

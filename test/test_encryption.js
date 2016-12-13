@@ -12,15 +12,15 @@ describe('encryption test', () => {
             'test2': 'cc59b0708e67004304826712f1c07026'
         };
         let res = {
-            cookie: function (name,value,options) {
-                console.log(name,value,options);
+            cookie: function (name, value, options) {
+                //console.log(name, value, options);
             },
         };
         cookie(req, res, next);
         if (next.called) {
-            res.cookie('test2','test2');
+            res.cookie('test2', 'test2');
             done();
-            console.log(req.cookies)
+            //console.log(req.cookies)
         } else {
             done('asf');
         }
